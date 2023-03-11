@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
+    Dictionary<int, GameObject> ObjectList = new Dictionary<int, GameObject>();
     public GameObject Square;
     public Transform GeneratorPoint;
     public int Distance;
     public int CollegeNum;
     void Start()
     {
+        MapGenerate();
+    }
+
+    public void MapGenerate()
+    {
         for (int i = 0; i < CollegeNum; i++)
         {
-            Instantiate(Square,GeneratorPoint.position,Quaternion.identity);
+            //Add instantiated Squares into ObjectList
+            ObjectList.Add(i,Instantiate(Square, GeneratorPoint.position, Quaternion.identity));
             if (i < (CollegeNum / 4))
             {
                 GeneratorPoint.position -= new Vector3(Distance, 0, 0);
