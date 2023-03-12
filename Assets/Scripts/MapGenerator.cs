@@ -9,9 +9,23 @@ public class MapGenerator : MonoBehaviour
     public Transform GeneratorPoint;
     public int Distance;
     public int CollegeNum;
+    //Colleges
+    public int EngineeringCollege;
+    public int SmartMechatronicsCollege;
+    public int ElectricalEngineeringAndInformaticsCollege;
+    public int MaritimeCollege;
+    public int HydrosphereCollege;
+    public int BusinessIntelligenceCollege;
+    public int ManagementCollege;
+    public int OceanBusinessCollege;
+    public int HumanitiesAndSocialSciencesCollege;
+    public int ForeignLanguagesCollege;
+    public Color[] Color_list;
+
     void Start()
     {
         MapGenerate();
+        ChangeColor();
     }
 
     public void MapGenerate()
@@ -37,6 +51,18 @@ public class MapGenerator : MonoBehaviour
                 GeneratorPoint.position -= new Vector3(0, Distance, 0);
             }
         }
+    }
+
+    public void ChangeColor()
+    {
+        for (int id = 0; id<CollegeNum; id++)
+        {
+            if (ObjectList.ContainsKey(id))
+            {
+                ObjectList[id].gameObject.GetComponent<SpriteRenderer>().color = Color_list[0];
+            }
+        }
+
     }
 
     void Update()

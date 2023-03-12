@@ -153,7 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &748394301
 MonoBehaviour:
@@ -171,6 +171,27 @@ MonoBehaviour:
   GeneratorPoint: {fileID: 1098816668}
   Distance: 2
   CollegeNum: 48
+  EngineeringCollege: 6
+  SmartMechatronicsCollege: 4
+  ElectricalEngineeringAndInformaticsCollege: 6
+  MaritimeCollege: 5
+  HydrosphereCollege: 5
+  BusinessIntelligenceCollege: 5
+  ManagementCollege: 8
+  OceanBusinessCollege: 4
+  HumanitiesAndSocialSciencesCollege: 2
+  ForeignLanguagesCollege: 3
+  Color_list:
+  - {r: 0.7972162, g: 0.4377358, b: 1, a: 0}
+  - {r: 1, g: 0.6207678, b: 0, a: 0}
+  - {r: 1, g: 0.37169808, b: 0.37169808, a: 0}
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 0.6264151, g: 0.87005746, b: 1, a: 0}
+  - {r: 0.2584905, g: 0.69538, b: 1, a: 0}
+  - {r: 0.20000002, g: 0.8705883, b: 0.62352943, a: 0}
+  - {r: 0, g: 0.8235295, b: 1, a: 0}
+  - {r: 0.8490566, g: 0.7338847, b: 0.55589175, a: 0}
+  - {r: 1, g: 0.96235263, b: 0, a: 0}
 --- !u!1 &1098816667
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +317,7 @@ RectTransform:
   m_Children:
   - {fileID: 1193061567}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -340,7 +361,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -160, y: 140}
+  m_AnchoredPosition: {x: -110, y: 110}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1193061568
@@ -433,8 +454,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 42bdbe02707e29b459b71d5365b00ba3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
