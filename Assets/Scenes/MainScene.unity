@@ -170,17 +170,18 @@ MonoBehaviour:
   Square: {fileID: 3898063926996534068, guid: f3ca745b5771f4a44805d9cfbbbf2cb1, type: 3}
   GeneratorPoint: {fileID: 1098816668}
   Distance: 2
-  CollegeNum: 48
-  EngineeringCollege: 6
-  SmartMechatronicsCollege: 4
-  ElectricalEngineeringAndInformaticsCollege: 6
-  MaritimeCollege: 5
-  HydrosphereCollege: 5
-  BusinessIntelligenceCollege: 5
-  ManagementCollege: 8
-  OceanBusinessCollege: 4
-  HumanitiesAndSocialSciencesCollege: 2
-  ForeignLanguagesCollege: 3
+  DepartmentNum: 48
+  CollegeNum: 10
+  EC: 6
+  SMC: 4
+  EEAIC: 6
+  MC: 5
+  HC: 5
+  BIC: 5
+  MMC: 8
+  OBC: 4
+  HASSC: 2
+  FLC: 3
   Color_list:
   - {r: 0.7972162, g: 0.4377358, b: 1, a: 1}
   - {r: 1, g: 0.6207678, b: 0, a: 1}
