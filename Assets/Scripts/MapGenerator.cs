@@ -60,6 +60,46 @@ public class MapGenerator : MonoBehaviour
         {
             if (ObjectList.ContainsKey(id))
             {
+                if (id < EC)
+                {
+                    Area = 0;
+                }
+                else if (id < EC + SMC)
+                {
+                    Area = 1;
+                }
+                else if (id < EC + SMC + EEAIC)
+                {
+                    Area = 2;
+                }
+                else if (id < EC + SMC + EEAIC + MC)
+                {
+                    Area = 3;
+                }
+                else if (id < EC + SMC +EEAIC + MC +HC)
+                {
+                    Area = 4;
+                }
+                else if (id < EC + SMC + EEAIC + MC + HC +BIC)
+                {
+                    Area = 5;
+                }
+                else if (id < EC + SMC + EEAIC + MC + HC + BIC + MMC)
+                {
+                    Area = 6;
+                }
+                else if (id < EC + SMC + EEAIC + MC + HC + BIC + MMC + OBC)
+                {
+                    Area = 7;
+                }
+                else if (id < EC + SMC + EEAIC + MC + HC + BIC + MMC + OBC + HASSC)
+                {
+                    Area = 8;
+                }
+                else if (id < EC + SMC + EEAIC + MC + HC + BIC + MMC + OBC +HASSC +FLC)
+                {
+                    Area = 9;
+                }
                 ObjectList[id].gameObject.GetComponent<SpriteRenderer>().color = Color_list[Area];
             }
         }
