@@ -59,7 +59,7 @@ public class MapGenerator : MonoBehaviour
         {
             if (ObjectList.ContainsKey(id))
             {
-                ObjectList[id].gameObject.GetComponent<SpriteRenderer>().color = Color_list[0];
+                //ObjectList[id].gameObject.GetComponent<SpriteRenderer>().color = Color_list[0];
             }
         }
 
