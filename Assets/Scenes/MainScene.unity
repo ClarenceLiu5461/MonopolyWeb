@@ -386,8 +386,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a190af0b0d214040a07fb0d00d53fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dice: {fileID: 0}
-  Player: {fileID: 0}
+  Dice: {fileID: 1193061567}
+  Player: {fileID: 1390643664}
+  DiceOne: {fileID: 21300000, guid: 42bdbe02707e29b459b71d5365b00ba3, type: 3}
+  DiceTwo: {fileID: 21300000, guid: 1efbb9377eacb61469926740340433ce, type: 3}
+  DiceThree: {fileID: 21300000, guid: 00dba9e2cc90c8d48bab13f846ade965, type: 3}
+  DiceFour: {fileID: 21300000, guid: 28d3f0fa5353e5a44b9dde9671e0bbcd, type: 3}
+  DiceFive: {fileID: 21300000, guid: abd3561e676976a408bbb3635d6e26f0, type: 3}
+  DiceSix: {fileID: 21300000, guid: f64bc043d53d3514dbee3cc4f1e77cd8, type: 3}
 --- !u!114 &1193061569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,7 +417,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
