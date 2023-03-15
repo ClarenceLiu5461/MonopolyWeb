@@ -6,6 +6,7 @@ public class MapGenerator : MonoBehaviour
 {
     Dictionary<int, GameObject> ObjectList = new Dictionary<int, GameObject>();
     public GameObject Square;
+    public Transform SquaresParent;
     public Transform GeneratorPoint;
     public int Distance;
     public int DepartmentNum;
@@ -33,7 +34,7 @@ public class MapGenerator : MonoBehaviour
         for (int i = 0; i < DepartmentNum; i++)
         {
             //Add instantiated Squares into ObjectList
-            ObjectList.Add(i,Instantiate(Square, GeneratorPoint.position, Quaternion.identity));
+            ObjectList.Add(i,Instantiate(Square, GeneratorPoint.position, Quaternion.identity,SquaresParent));
             if (i < (DepartmentNum / 4))
             {
                 GeneratorPoint.position -= new Vector3(Distance, 0, 0);
