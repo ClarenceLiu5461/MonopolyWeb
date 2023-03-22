@@ -48,7 +48,7 @@ public class DiceController : MonoBehaviour
                 Dice.GetComponent<Image>().sprite = DiceSix;
                 break;
         }
-        InvokeRepeating("Step", 1f, 1f);
+        InvokeRepeating("Step", 0.8f, 0.8f);
         Dice.GetComponent<Button>().interactable = false;
         Debug.Log(Point);
     }
