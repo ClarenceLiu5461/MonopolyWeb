@@ -17,6 +17,8 @@ public class DiceController : MonoBehaviour
     public Sprite DiceSix;
     
     private int Past = 0;
+    private int StepCount = 0;
+    private int Point;
     void Start()
     {
         
@@ -24,7 +26,7 @@ public class DiceController : MonoBehaviour
 
     public void RollDice()
     {
-        int Point = Random.Range(1, 7);
+        Point = Random.Range(1, 7);
         switch (Point)
         {
             case 1:
@@ -46,20 +48,23 @@ public class DiceController : MonoBehaviour
                 Dice.GetComponent<Image>().sprite = DiceSix;
                 break;
         }
-        for (int i = 0; i < Point; i++)
-        {
-            if (Past == DepartmentNum)
-            {
-                Past = 0;
-            }
-            Step();
-        }
+        InvokeRepeating("Step", 1f, 1f);
         Debug.Log(Point);
     }
 
     public void Step()
     {
-        if (Past < (DepartmentNum / 4))
+        StepCount++;
+        if (StepCount == Point)
+        {
+            CancelInvoke("Step");
+            StepCount = 0;
+        }
+        if (Past == DepartmentNum)
+        {
+            Past = 0;
+        }
+        else if (Past < (DepartmentNum / 4))
         {
             Player.transform.position -= new Vector3(Distance, 0, 0);
         }
