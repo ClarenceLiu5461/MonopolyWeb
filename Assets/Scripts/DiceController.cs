@@ -49,6 +49,7 @@ public class DiceController : MonoBehaviour
                 break;
         }
         InvokeRepeating("Step", 1f, 1f);
+        Dice.GetComponent<Button>().interactable = false;
         Debug.Log(Point);
     }
 
@@ -59,6 +60,7 @@ public class DiceController : MonoBehaviour
         {
             CancelInvoke("Step");
             StepCount = 0;
+            Dice.GetComponent<Button>().interactable = true;
         }
         if (Past == DepartmentNum)
         {
