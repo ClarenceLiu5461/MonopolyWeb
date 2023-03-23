@@ -7,6 +7,7 @@ public class DiceController : MonoBehaviour
 {
     public int DepartmentNum;
     public int Distance;
+    public AudioClip StepSound;
     public Transform Dice;
     public GameObject Player;
     public Sprite DiceOne;
@@ -16,12 +17,13 @@ public class DiceController : MonoBehaviour
     public Sprite DiceFive;
     public Sprite DiceSix;
     
+    private AudioSource AudioSource;
     private int Past = 0;
     private int StepCount = 0;
     private int Point;
     void Start()
     {
-        
+        AudioSource = GetComponent<AudioSource>();
     }
 
     public void RollDice()
@@ -48,13 +50,14 @@ public class DiceController : MonoBehaviour
                 Dice.GetComponent<Image>().sprite = DiceSix;
                 break;
         }
-        InvokeRepeating("Step", 0.8f, 0.8f);
+        InvokeRepeating("Step", 0.5f, 0.5f);
         Dice.GetComponent<Button>().interactable = false;
         Debug.Log(Point);
     }
 
     public void Step()
     {
+        AudioSource.PlayOneShot(StepSound);
         StepCount++;
         if (StepCount == Point)
         {
@@ -65,6 +68,7 @@ public class DiceController : MonoBehaviour
         if (Past == DepartmentNum)
         {
             Past = 0;
+            Player.transform.position -= new Vector3(Distance, 0, 0);
         }
         else if (Past < (DepartmentNum / 4))
         {
