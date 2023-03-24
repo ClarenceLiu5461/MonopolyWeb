@@ -18,16 +18,23 @@ public class DiceController : MonoBehaviour
     public Sprite DiceSix;
     
     private AudioSource AudioSource;
-    private int Past = 0;
     private int StepCount = 0;
     private int Point;
+    
+    private int DiceNum;
+    private int Past;
+    private int ExchangePoint;
     void Start()
     {
         AudioSource = GetComponent<AudioSource>();
+        DiceNum = GameData.DiceNum;
+        Past = GameData.Past;
+        ExchangePoint = GameData.ExchangePoint;
     }
 
     public void RollDice()
     {
+        DiceNum--;
         Point = Random.Range(1, 7);
         switch (Point)
         {
@@ -53,6 +60,12 @@ public class DiceController : MonoBehaviour
         InvokeRepeating("Step", 0.5f, 0.5f);
         Dice.GetComponent<Button>().interactable = false;
         Debug.Log(Point);
+        GameData.DiceNum = DiceNum;
+        GameData.Past = Past;
+        GameData.ExchangePoint = ExchangePoint;
+        Debug.Log("GameData.DiceNum = " + GameData.DiceNum);
+        Debug.Log("GameData.Past = " + GameData.Past);
+        Debug.Log("GameData.ExchangePoint = " + GameData.ExchangePoint);
     }
 
     public void Step()
@@ -68,6 +81,7 @@ public class DiceController : MonoBehaviour
         if (Past == DepartmentNum)
         {
             Past = 0;
+            ExchangePoint++;
             Player.transform.position -= new Vector3(Distance, 0, 0);
         }
         else if (Past < (DepartmentNum / 4))
@@ -91,6 +105,6 @@ public class DiceController : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 }
