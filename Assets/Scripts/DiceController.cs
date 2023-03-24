@@ -105,6 +105,13 @@ public class DiceController : MonoBehaviour
 
     void Update()
     {
-
+        if (DiceNum > 0)
+        {
+            Dice.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            Dice.GetComponent<Button>().interactable = false;
+        }
     }
 }
