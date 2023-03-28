@@ -8,6 +8,7 @@ public class DiceController : MonoBehaviour
     public int DepartmentNum;
     public int Distance;
     public AudioClip StepSound;
+    public AudioClip Scored;
     public Transform Dice;
     public GameObject Player;
     public Sprite DiceOne;
@@ -16,7 +17,9 @@ public class DiceController : MonoBehaviour
     public Sprite DiceFour;
     public Sprite DiceFive;
     public Sprite DiceSix;
-    
+    public Text PlaceName;
+    public List<string> PlaceList = new List<string>();
+
     private AudioSource AudioSource;
     private int StepCount = 0;
     private int Point;
@@ -59,17 +62,13 @@ public class DiceController : MonoBehaviour
         InvokeRepeating("Step", 0.5f, 0.5f);
         Dice.GetComponent<Button>().interactable = false;
         Debug.Log(Point);
-        GameData.DiceNum = DiceNum;
-        GameData.Past = Past;
-        GameData.ExchangePoint = ExchangePoint;
-        Debug.Log("GameData.DiceNum = " + GameData.DiceNum);
-        Debug.Log("GameData.Past = " + GameData.Past);
-        Debug.Log("GameData.ExchangePoint = " + GameData.ExchangePoint);
+        DataUpdate();
     }
 
     public void Step()
     {
         AudioSource.PlayOneShot(StepSound);
+        Past++;
         StepCount++;
         if (StepCount == Point)
         {
@@ -79,19 +78,20 @@ public class DiceController : MonoBehaviour
         }
         if (Past == DepartmentNum)
         {
+            AudioSource.PlayOneShot(Scored);
             Past = 0;
             ExchangePoint++;
-            Player.transform.position -= new Vector3(Distance, 0, 0);
+            Player.transform.position -= new Vector3(0, Distance, 0);
         }
-        else if (Past < (DepartmentNum / 4))
+        else if (Past < (DepartmentNum / 4) + 1)
         {
             Player.transform.position -= new Vector3(Distance, 0, 0);
         }
-        else if (Past < (DepartmentNum / 2))
+        else if (Past < (DepartmentNum / 2) + 1)
         {
             Player.transform.position += new Vector3(0, Distance, 0);
         }
-        else if (Past < (DepartmentNum / 4) * 3)
+        else if (Past < ((DepartmentNum / 4) * 3)+1)
         {
             Player.transform.position += new Vector3(Distance, 0, 0);
         }
@@ -99,14 +99,28 @@ public class DiceController : MonoBehaviour
         {
             Player.transform.position -= new Vector3(0, Distance, 0);
         }
-        Past++;
+    }
+
+    public void DataUpdate()
+    {
+        GameData.DiceNum = DiceNum;
+        GameData.Past = Past;
+        GameData.ExchangePoint = ExchangePoint;
+        Debug.Log("GameData.DiceNum = " + GameData.DiceNum);
+        Debug.Log("GameData.Past = " + GameData.Past);
+        Debug.Log("GameData.ExchangePoint = " + GameData.ExchangePoint);
     }
 
     void Update()
     {
+        PlaceName.text = "" + PlaceList[Past];
         if (DiceNum < 0)
         {
             Dice.GetComponent<Button>().interactable = false;
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("GameData Past" + GameData.Past);
         }
     }
 }
