@@ -20,7 +20,6 @@ public class DiceController : MonoBehaviour
     private AudioSource AudioSource;
     private int StepCount = 0;
     private int Point;
-    
     private int DiceNum;
     private int Past;
     private int ExchangePoint;
@@ -105,11 +104,7 @@ public class DiceController : MonoBehaviour
 
     void Update()
     {
-        if (DiceNum > 0)
-        {
-            Dice.GetComponent<Button>().interactable = true;
-        }
-        else
+        if (DiceNum < 0)
         {
             Dice.GetComponent<Button>().interactable = false;
         }
