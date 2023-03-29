@@ -10,17 +10,25 @@ public class MapGenerator : MonoBehaviour
     public Transform GeneratorPoint;
     public int Distance;
     public int DepartmentNum;
-    //Colleges
-    public int EC;
-    public int SMC;
-    public int EEAIC;
-    public int MC;
-    public int HC;
-    public int BIC;
-    public int MMC;
-    public int OBC;
-    public int HASSC;
-    public int FLC;
+    //Districts
+    public int ML;
+    public int LG;
+    public int MN;
+    public int DS;
+    public int XG;
+    public int FS;
+    public int NS;
+    public int TL;
+    public int CJ1;
+    public int CJ2;
+    public int GS;
+    public int YG;
+    public int QJ;
+    public int XX;
+    public int SM;
+    public int ZY;
+    public int AT;
+
     public Color[] Color_list;
 
     void Start()
@@ -34,7 +42,7 @@ public class MapGenerator : MonoBehaviour
         for (int i = 0; i < DepartmentNum; i++)
         {
             //Add instantiated Squares into ObjectList
-            ObjectList.Add(i,Instantiate(Square, GeneratorPoint.position, Quaternion.identity,SquaresParent));
+            ObjectList.Add(i, Instantiate(Square, GeneratorPoint.position, Quaternion.identity, SquaresParent));
             if (i < (DepartmentNum / 4))
             {
                 GeneratorPoint.position -= new Vector3(Distance, 0, 0);
@@ -61,45 +69,73 @@ public class MapGenerator : MonoBehaviour
         {
             if (ObjectList.ContainsKey(id))
             {
-                if (id < EC)
+                if (id < ML)
                 {
                     Area = 0;
                 }
-                else if (id < EC + SMC)
+                else if (id < ML + LG)
                 {
                     Area = 1;
                 }
-                else if (id < EC + SMC + EEAIC)
+                else if (id < ML + LG + MN)
                 {
                     Area = 2;
                 }
-                else if (id < EC + SMC + EEAIC + MC)
+                else if (id < ML + LG + MN + DS)
                 {
                     Area = 3;
                 }
-                else if (id < EC + SMC +EEAIC + MC +HC)
+                else if (id < ML + LG + MN + DS + XG)
                 {
                     Area = 4;
                 }
-                else if (id < EC + SMC + EEAIC + MC + HC +BIC)
+                else if (id < ML + LG + MN + DS + XG + FS)
                 {
                     Area = 5;
                 }
-                else if (id < EC + SMC + EEAIC + MC + HC + BIC + MMC)
+                else if (id < ML + LG + MN + DS + XG + FS + NS)
                 {
                     Area = 6;
                 }
-                else if (id < EC + SMC + EEAIC + MC + HC + BIC + MMC + OBC)
+                else if (id < ML + LG + MN + DS + XG + FS + NS + TL)
                 {
                     Area = 7;
                 }
-                else if (id < EC + SMC + EEAIC + MC + HC + BIC + MMC + OBC + HASSC)
+                else if (id < ML + LG + MN + DS + XG + FS + NS + TL + CJ1)
                 {
                     Area = 8;
                 }
-                else if (id < EC + SMC + EEAIC + MC + HC + BIC + MMC + OBC +HASSC +FLC)
+                else if (id < ML + LG + MN + DS + XG + FS + NS + TL + CJ1 + CJ2)
                 {
                     Area = 9;
+                }
+                else if (id < ML + LG + MN + DS + XG + FS + NS + TL + CJ1 + CJ2 +GS)
+                {
+                    Area = 10;
+                }
+                else if (id < ML + LG + MN + DS + XG + FS + NS + TL + CJ1 + CJ2 + GS +YG)
+                {
+                    Area = 11;
+                }
+                else if (id < ML + LG + MN + DS + XG + FS + NS + TL + CJ1 + CJ2 + GS + YG + QJ)
+                {
+                    Area = 12;
+                }
+                else if (id < ML + LG + MN + DS + XG + FS + NS + TL + CJ1 + CJ2 + GS + YG + QJ + XX)
+                {
+                    Area = 13;
+                }
+                else if (id < ML + LG + MN + DS + XG + FS + NS + TL + CJ1 + CJ2 + GS + YG + QJ + XX +SM)
+                {
+                    Area = 14;
+                }
+                else if (id < ML + LG + MN + DS + XG + FS + NS + TL + CJ1 + CJ2 + GS + YG + QJ + XX + SM +ZY)
+                {
+                    Area = 15;
+                }
+                else if (id < ML + LG + MN + DS + XG + FS + NS + TL + CJ1 + CJ2 + GS + YG + QJ + XX + SM + ZY +AT)
+                {
+                    Area = 16;
                 }
                 ObjectList[id].gameObject.GetComponent<SpriteRenderer>().color = Color_list[Area];
             }
@@ -108,38 +144,60 @@ public class MapGenerator : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
-    /*10學院48系
-    工學院6
-    化學工程與材料工程系、土木工程系、工業工程與管理系、營建工程系、環境與安全衛生工程系、工業設計系
+    /*17區32景點
+    茂林區 ML
+    龍頭山老鷹谷遊樂區休息區
 
-    智慧機電學院4
-    機械工程系、模具工程系、機電工程系、能源與冷凍空調工程系
-    
-    電機與資訊學院6
-    電機工程系、電子工程系、資訊工程系、電子工程系、電腦與通訊工程系、半導體工程系
-    
-    海事學院5
-    造船及海洋工程系、電訊工程系、航運技術系、輪機工程系、海事資訊科技系
-    
-    水圈學院5
-    漁業生產與管理系、水產食品科學系、水產養殖系、海洋生物技術系、海洋環境工程系
-    
-    商業智慧學院5
-    會計資訊系、金融資訊系、財政稅務系、觀光管理系、智慧商務系
-    
-    管理學院8
-    資訊管理系、運籌管理系、行銷與流通管理系、國際企業系、企業管理系、風險管理與保險系、金融系、財務管理系
-    
-    海洋商務學院4
-    航運管理系、商務資訊應用系、供應鏈管理系、海洋休閒管理系
-    
-    人文社會學院2
-    人力資源發展系、文化創意產業系
-    
-    外語學院3
-    應用英語系、應用日語系、應用德語系
+    六龜區 LG
+    神威天台山、浦來溪頭社戰道
+
+    美濃區 MN
+    美濃民俗村
+
+    大樹區 DS
+    舊鐵橋濕地生態公園、義大遊樂世界
+
+    小港區 XG
+    淨園農場
+
+    鳳山區 FS
+    衛武營國家藝術文化中心、大東文化藝術中心
+
+    鳥松區 NS
+    迷宮花園
+
+    田寮區 TL
+    石頭廟、月世界地景公園
+
+    旗津區 CJ1
+    旗津風車公園
+
+    前鎮區 CJ2
+    高雄市立圖書館總館、大魯閣草衙道摩天輪
+
+    鼓山區 GS
+    大港橋、打狗英國領事館官邸、棧貳庫KW2、壽山情人觀景台
+    海岸咖啡、柴山漁港、西子灣
+
+    鹽埕區 YC
+    高雄流行音樂中心/音浪塔、駁二藝術特區
+
+    前金區 QJ
+    白色戀人貨櫃屋
+
+    新興區 XX
+    逍遙園、美麗島站 光之穹頂
+
+    三民區 SM
+    舊三塊厝車站、三鳳宮
+
+    左營區 ZY
+    果貿社區、蓮池潭
+
+    彌陀區 AT
+    彌陀漁港海岸光廊
     */
 }
