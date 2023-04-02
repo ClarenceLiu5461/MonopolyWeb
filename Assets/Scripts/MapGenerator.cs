@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    Dictionary<int, GameObject> ObjectList = new Dictionary<int, GameObject>();
+    public static Dictionary<int, GameObject> ObjectList = new Dictionary<int, GameObject>();
     public GameObject Square;
     public Transform SquaresParent;
     public Transform GeneratorPoint;

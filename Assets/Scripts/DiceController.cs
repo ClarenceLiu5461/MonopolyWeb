@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class DiceController : MonoBehaviour
 {
-    public int DepartmentNum;
-    public int Distance;
+    public int SceneNum;
     public AudioClip StepSound;
     public AudioClip Scored;
     public Transform Dice;
@@ -67,37 +66,23 @@ public class DiceController : MonoBehaviour
 
     public void Step()
     {
-        AudioSource.PlayOneShot(StepSound);
-        Past++;
-        StepCount++;
+        AudioSource.PlayOneShot(StepSound); //Play move audio one time
+        Past++; //Player progress +1
+        StepCount++; //Player step +1
+        Player.transform.position = MapGenerator.ObjectList[Past].transform.position;
+        //Set Past = 0 when player reach the start point
+        if (Past == SceneNum - 1)
+        {
+            AudioSource.PlayOneShot(Scored);
+            Past = 0;
+            ExchangePoint++;
+        }
+        //InvokeRepeating stop condition
         if (StepCount == Point)
         {
             CancelInvoke("Step");
             StepCount = 0;
             Dice.GetComponent<Button>().interactable = true;
-        }
-        if (Past == DepartmentNum)
-        {
-            AudioSource.PlayOneShot(Scored);
-            Past = 0;
-            ExchangePoint++;
-            Player.transform.position -= new Vector3(0, Distance, 0);
-        }
-        else if (Past < (DepartmentNum / 4) + 1)
-        {
-            Player.transform.position -= new Vector3(Distance, 0, 0);
-        }
-        else if (Past < (DepartmentNum / 2) + 1)
-        {
-            Player.transform.position += new Vector3(0, Distance, 0);
-        }
-        else if (Past < ((DepartmentNum / 4) * 3)+1)
-        {
-            Player.transform.position += new Vector3(Distance, 0, 0);
-        }
-        else
-        {
-            Player.transform.position -= new Vector3(0, Distance, 0);
         }
     }
 
@@ -113,14 +98,12 @@ public class DiceController : MonoBehaviour
 
     void Update()
     {
+        //Display scene name
         PlaceName.text = "" + PlaceList[Past];
+        //Disable Dice funtion when player has run out of Dice 
         if (DiceNum < 0)
         {
             Dice.GetComponent<Button>().interactable = false;
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Debug.Log("GameData Past" + GameData.Past);
         }
     }
 }
