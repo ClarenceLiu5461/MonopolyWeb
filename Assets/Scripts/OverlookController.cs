@@ -9,15 +9,6 @@ public class OverlookController : MonoBehaviour
     public GameObject Camera2;
     public Text btnText;
     public GameObject Dice;
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     public void Overlook()
     {
