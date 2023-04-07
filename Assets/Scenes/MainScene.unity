@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u5B78\u9662\u540D\u7A31"
+  m_Text: "\u5730\u9EDE\u540D\u7A31"
 --- !u!222 &118578816
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -898,7 +898,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneNum: 33
   StepSound: {fileID: 8300000, guid: 78025c236a574534991bdb01b026cc67, type: 3}
-  Scored: {fileID: 8300000, guid: cc916abb8ec8f614897304606c89ea0c, type: 3}
   Dice: {fileID: 1193061567}
   Player: {fileID: 1390643664}
   DiceOne: {fileID: 21300000, guid: 42bdbe02707e29b459b71d5365b00ba3, type: 3}
@@ -1557,7 +1556,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u986F\u793A\u5730\u5716"
+  m_Text: "\u5730\u9EDE\u8CC7\u8A0A"
 --- !u!222 &1501933327
 CanvasRenderer:
   m_ObjectHideFlags: 0

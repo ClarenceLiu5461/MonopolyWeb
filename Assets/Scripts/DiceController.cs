@@ -7,7 +7,6 @@ public class DiceController : MonoBehaviour
 {
     public int SceneNum;
     public AudioClip StepSound;
-    public AudioClip Scored;
     public Transform Dice;
     public GameObject Player;
     public Sprite DiceOne;
@@ -73,9 +72,7 @@ public class DiceController : MonoBehaviour
         //Set Past = 0 when player reach the start point
         if (Past == SceneNum - 1)
         {
-            AudioSource.PlayOneShot(Scored);
             Past = 0;
-            ExchangePoint++;
         }
         //InvokeRepeating stop condition
         if (StepCount == Point)
