@@ -88,16 +88,18 @@ public class DiceController : MonoBehaviour
 
     public void DataUpdate()
     {
+
+    }
+
+    void Update()
+    {
+        //Synchronize GameData
         GameData.DiceNum = DiceNum;
         GameData.Past = Past;
         GameData.ExchangePoint = ExchangePoint;
         Debug.Log("GameData.DiceNum = " + GameData.DiceNum);
         Debug.Log("GameData.Past = " + GameData.Past);
         Debug.Log("GameData.ExchangePoint = " + GameData.ExchangePoint);
-    }
-
-    void Update()
-    {
         //Display scene name
         PlaceName.text = "" + PlaceList[Past];
         //Disable Dice funtion when player has run out of Dice 

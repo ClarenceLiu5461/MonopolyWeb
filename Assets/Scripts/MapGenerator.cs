@@ -142,11 +142,6 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
-
     /*17區32景點
     茂林區 ML
     龍頭山老鷹谷遊樂區休息區
