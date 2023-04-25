@@ -7,6 +7,7 @@ public class DiceController : MonoBehaviour
 {
     public int SceneNum;
     public AudioClip StepSound;
+    public AudioClip Choosed;
     public Transform Dice;
     public GameObject Player;
     public Sprite DiceOne;
@@ -80,6 +81,7 @@ public class DiceController : MonoBehaviour
             CancelInvoke("Step");
             StepCount = 0;
             Dice.GetComponent<Button>().interactable = true;
+            AudioSource.PlayOneShot(Choosed);
         }
     }
 

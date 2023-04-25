@@ -171,7 +171,7 @@ public class MapGenerator : MonoBehaviour
     旗津風車公園
 
     前鎮區 CJ2
-    高雄市立圖書館總館、大魯閣草衙道摩天輪
+    高雄市立圖書館總館、SKM Park Outlets
 
     鼓山區 GS
     大港橋、打狗英國領事館官邸、棧貳庫KW2、壽山情人觀景台

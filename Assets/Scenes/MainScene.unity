@@ -351,7 +351,7 @@ MonoBehaviour:
   - https://www.google.com.tw/maps/place/%E6%9C%88%E4%B8%96%E7%95%8C%E5%9C%B0%E6%99%AF%E5%85%AC%E5%9C%92/@22.8875994,120.386654,18z/data=!4m10!1m2!2m1!1z5pyI5LiW55WM5Zyw5pmv5YWs5ZyS!3m6!1s0x346e6d1cc1303e87:0xda3eb675d7232a0d!8m2!3d22.8889685!4d120.386562!15sChXmnIjkuJbnlYzlnLDmma_lhazlnJJaGyIZ5pyIIOS4lueVjCDlnLAg5pmvIOWFrOWckpIBBHBhcmuaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTm9NVmxIVWpSUlJSQULgAQA!16s%2Fg%2F11f042vjt_
   - https://www.google.com.tw/maps/place/%E6%97%97%E6%B4%A5%E9%A2%A8%E8%BB%8A%E5%85%AC%E5%9C%92/@22.5883175,120.2821491,17z/data=!3m1!4b1!4m6!3m5!1s0x346e03ee0eeaaaab:0xee628018badd5b71!8m2!3d22.5883126!4d120.2843378!16s%2Fm%2F0120y0wh
   - https://www.google.com.tw/maps/place/%E9%AB%98%E9%9B%84%E5%B8%82%E7%AB%8B%E5%9C%96%E6%9B%B8%E9%A4%A8%E7%B8%BD%E9%A4%A8/@22.5883421,120.275583,15z/data=!4m10!1m2!2m1!1z6auY6ZuE5biC56uL5ZyW5pu46aSo57i96aSo!3m6!1s0x346e0c995f8dcfb3:0x62d29ce2a4f9e568!8m2!3d22.6102306!4d120.30175!15sChvpq5jpm4TluILnq4vlnJbmm7jppKjnuL3ppKgiA4gBAVoiIiDpq5jpm4Qg5biC56uLIOWcluabuCDppKgg57i9IOmkqJIBDnB1YmxpY19saWJyYXJ5mgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVIxTUdOUWJVVlJFQUXgAQA!16s%2Fg%2F155q42hx
-  - https://www.google.com.tw/maps/place/%E5%A4%A7%E9%AD%AF%E9%96%A3%E8%8D%89%E8%A1%99%E9%81%93%E6%91%A9%E5%A4%A9%E8%BC%AA/@22.5838355,120.3270341,17z/data=!3m1!4b1!4m6!3m5!1s0x346e03bf60c5921d:0x6ed13eba968fec74!8m2!3d22.5838306!4d120.3292228!16s%2Fg%2F11gnpl22js
+  - https://www.google.com.tw/maps/place/SKM+Park+Outlets+Kaohsiung+Caoya/@22.5803727,120.3239972,17z/data=!4m10!1m2!2m1!1z5aSn6a2v6Zaj6I2J6KGZ6YGT!3m6!1s0x346e0480a9ebd505:0x932e7944827ed71!8m2!3d22.5825944!4d120.3293377!15sChLlpKfpra_plqPojYnooZnpgZNaGSIX5aSnIOmtryDplqMg6I2JIOihmSDpgZOSAQ9zaG9wcGluZ19jZW50ZXKaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTkhlalZxUWpKUlJSQULgAQA!16s%2Fg%2F125_d2mxn
   - https://www.google.com.tw/maps/place/%E9%AB%98%E9%9B%84%E6%B8%AF%E5%A4%A7%E6%B8%AF%E6%A9%8B/@22.6178606,120.2816652,17z/data=!3m1!4b1!4m6!3m5!1s0x346e05ef92e80f25:0xf795aa6f20cacb0f!8m2!3d22.6178557!4d120.2838539!16s%2Fg%2F11j13yw1nn
   - https://www.google.com.tw/maps/place/%E6%89%93%E7%8B%97%E8%8B%B1%E5%9C%8B%E9%A0%98%E4%BA%8B%E9%A4%A8%E5%AE%98%E9%82%B8/@22.6183623,120.2649405,17z/data=!4m10!1m2!2m1!1z5omT54uX6Iux5ZyL6aCY5LqL6aSo5a6Y6YK4!3m6!1s0x346e03f6c175f515:0x330051a5aba9d11d!8m2!3d22.6188665!4d120.2668686!15sChvmiZPni5foi7HlnIvpoJjkuovppKjlrpjpgrhaISIf5omTIOeLlyDoi7HlnIsg6aCY5LqL6aSoIOWumOmCuJIBE2hpc3RvcmljYWxfbGFuZG1hcmuaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTnpMWFI2YkZSQkVBReABAA!16s%2Fm%2F0406yjp
   - https://www.google.com.tw/maps/place/%E6%A3%A7%E8%B2%B3%E5%BA%ABKW2/@22.618651,120.2756059,17z/data=!3m1!4b1!4m6!3m5!1s0x346e038a50b72429:0xb3dc2fb496ec1787!8m2!3d22.6186461!4d120.2777946!16s%2Fg%2F11hbvyc3x0
@@ -898,6 +898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneNum: 33
   StepSound: {fileID: 8300000, guid: 78025c236a574534991bdb01b026cc67, type: 3}
+  Choosed: {fileID: 8300000, guid: cc916abb8ec8f614897304606c89ea0c, type: 3}
   Dice: {fileID: 1193061567}
   Player: {fileID: 1390643664}
   DiceOne: {fileID: 21300000, guid: 42bdbe02707e29b459b71d5365b00ba3, type: 3}
@@ -922,7 +923,7 @@ MonoBehaviour:
   - "\u6708\u4E16\u754C\u5730\u666F\u516C\u5712"
   - "\u65D7\u6D25\u98A8\u8ECA\u516C\u5712"
   - "\u9AD8\u96C4\u5E02\u7ACB\u5716\u66F8\u9928\u7E3D\u9928"
-  - "\u5927\u9B6F\u95A3\u8349\u8859\u9053\u6469\u5929\u8F2A"
+  - SKM Park Outlets
   - "\u5927\u6E2F\u6A4B"
   - "\u6253\u72D7\u82F1\u570B\u9818\u4E8B\u9928\u5B98\u90B8"
   - "\u68E7\u8CB3\u5EABKW2"
@@ -1272,15 +1273,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0.764151, g: 0.5579744, b: 0.5579744, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: eb501f3afa27b3a4eb570e12a0634026, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
