@@ -24,13 +24,12 @@ public class DiceController : MonoBehaviour
     private int Point;
     private int DiceNum;
     private int Past;
-    private int ExchangePoint;
     void Start()
     {
         AudioSource = GetComponent<AudioSource>();
         DiceNum = GameData.DiceNum;
         Past = GameData.Past;
-        ExchangePoint = GameData.ExchangePoint;
+        Player.transform.position = MapGenerator.ObjectList[Past].transform.position;
     }
 
     public void RollDice()
@@ -61,7 +60,6 @@ public class DiceController : MonoBehaviour
         InvokeRepeating("Step", 0.5f, 0.5f);
         Dice.GetComponent<Button>().interactable = false;
         Debug.Log(Point);
-        DataUpdate();
     }
 
     public void Step()
@@ -85,20 +83,13 @@ public class DiceController : MonoBehaviour
         }
     }
 
-    public void DataUpdate()
-    {
-
-    }
-
     void Update()
     {
         //Synchronize GameData
         GameData.DiceNum = DiceNum;
         GameData.Past = Past;
-        GameData.ExchangePoint = ExchangePoint;
         Debug.Log("GameData.DiceNum = " + GameData.DiceNum);
         Debug.Log("GameData.Past = " + GameData.Past);
-        Debug.Log("GameData.ExchangePoint = " + GameData.ExchangePoint);
         //Display scene name
         PlaceName.text = "" + PlaceList[Past];
         //Disable Dice funtion when player has run out of Dice 
