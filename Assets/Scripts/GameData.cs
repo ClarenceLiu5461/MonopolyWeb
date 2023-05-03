@@ -28,7 +28,7 @@ public class GameData : MonoBehaviour
         using (HttpClient client = new HttpClient())
         {
             // PHP 程式的網址
-            string phpUrl = "../from/php/gameuser.php";
+            string phpUrl = "http://localhost:8002/form/php/gameuser.php";
 
             // 發送 GET 請求並接收回應
             HttpResponseMessage response = await client.GetAsync(phpUrl);
