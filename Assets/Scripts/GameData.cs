@@ -22,8 +22,8 @@ public class GameData : MonoBehaviour
         Data[] dataArray = JsonConvert.DeserializeObject<Data[]>(response);
 
         //設定玩家位置和骰子數量
-        Debug.Log(dataArray[0]);
-        Debug.Log(dataArray[1]);
+        Data data = new Data();
+        Debug.Log("Past: " + data.userlocation + ", DiceNum: " + data.dice);
         Past = int.Parse(dataArray[0].ToString());
         DiceNum = int.Parse(dataArray[1].ToString());
     }
