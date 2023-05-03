@@ -19,16 +19,16 @@ public class GameData : MonoBehaviour
         Data[] dataArray = JsonConvert.DeserializeObject<Data[]>(response);
         
         //設定玩家位置和骰子數量
-        Data data = new Data();
-        Past = data.userlocation;
-        DiceNum = data.dice;
+        Past = dataArray[0].userlocation;
+        DiceNum = dataArray[0].dice;
     }
 
     private async Task<string> SendHttpRequest()
     {
         using (HttpClient client = new HttpClient())
         {
-            string phpUrl = "../from/php/gameuser.php"; // PHP 程式的網址
+            // PHP 程式的網址
+            string phpUrl = "../from/php/gameuser.php";
 
             // 發送 GET 請求並接收回應
             HttpResponseMessage response = await client.GetAsync(phpUrl);
@@ -50,7 +50,7 @@ public class GameData : MonoBehaviour
         public int userlocation { get; set; }
         public int dice { get; set; }
     }
-    //Be called when shut down the program 
+    //關閉程式時呼叫此函數
     void OnDestory()
     {
         
