@@ -12,6 +12,9 @@ public class GameData : MonoBehaviour
 
     private async void Start()
     {
+        //Debug Past and DiceNum
+        Debug.Log(Past);
+        Debug.Log(DiceNum);
         // 發送 HTTP 請求並接收回傳的資料
         string response = await SendHttpRequest();
 
