@@ -17,10 +17,12 @@ public class GameData : MonoBehaviour
 
         // 解析 JSON 格式的回傳資料
         Data[] dataArray = JsonConvert.DeserializeObject<Data[]>(response);
-        
+
         //設定玩家位置和骰子數量
-        Past = dataArray[0].userlocation;
-        DiceNum = dataArray[0].dice;
+        Debug.Log(dataArray[0]);
+        Debug.Log(dataArray[1]);
+        Past = int.Parse(dataArray[0].ToString());
+        DiceNum = int.Parse(dataArray[1].ToString());
     }
 
     private async Task<string> SendHttpRequest()
