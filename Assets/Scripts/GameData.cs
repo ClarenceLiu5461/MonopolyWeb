@@ -50,9 +50,4 @@ public class GameData : MonoBehaviour
         public int userlocation { get; set; }
         public int dice { get; set; }
     }
-    //關閉程式時呼叫此函數
-    void OnDestory()
-    {
-        
-    }
 }

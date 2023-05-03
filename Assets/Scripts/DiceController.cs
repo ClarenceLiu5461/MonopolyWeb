@@ -59,7 +59,6 @@ public class DiceController : MonoBehaviour
         }
         InvokeRepeating("Step", 0.5f, 0.5f);
         Dice.GetComponent<Button>().interactable = false;
-        Debug.Log(Point);
     }
 
     public void Step()
@@ -85,11 +84,6 @@ public class DiceController : MonoBehaviour
 
     void Update()
     {
-        //Synchronize GameData
-        GameData.DiceNum = DiceNum;
-        GameData.Past = Past;
-        Debug.Log("GameData.DiceNum = " + GameData.DiceNum);
-        Debug.Log("GameData.Past = " + GameData.Past);
         //Display scene name
         PlaceName.text = "" + PlaceList[Past];
         //Disable Dice funtion when player has run out of Dice 
@@ -97,5 +91,12 @@ public class DiceController : MonoBehaviour
         {
             Dice.GetComponent<Button>().interactable = false;
         }
+    }
+    //Called this function when progress shutted down
+    private void OnDestroy()
+    {
+        //Synchronize GameData
+        GameData.DiceNum = DiceNum;
+        GameData.Past = Past;
     }
 }
