@@ -91,6 +91,8 @@ public class DiceController : MonoBehaviour
         {
             Dice.GetComponent<Button>().interactable = false;
         }
+        GameData.Past = Past;
+        GameData.DiceNum = DiceNum;
     }
     //Called this function when progress shutted down
     private void OnDestroy()
