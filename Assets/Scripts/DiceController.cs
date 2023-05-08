@@ -27,8 +27,8 @@ public class DiceController : MonoBehaviour
     void Start()
     {
         AudioSource = GetComponent<AudioSource>();
-        DiceNum = GameData.DiceNum;
         Past = GameData.Past;
+        DiceNum = GameData.DiceNum;
         Player.transform.position = MapGenerator.ObjectList[Past].transform.position;
     }
 
@@ -87,7 +87,7 @@ public class DiceController : MonoBehaviour
         //Display scene name
         PlaceName.text = "" + PlaceList[Past];
         //Disable Dice funtion when player has run out of Dice 
-        if (DiceNum < 0)
+        if (DiceNum <= 0)
         {
             Dice.GetComponent<Button>().interactable = false;
         }
