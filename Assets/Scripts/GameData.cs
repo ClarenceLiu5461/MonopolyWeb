@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
-
+using System;
 
 public class GameData : MonoBehaviour
 {
@@ -58,5 +58,23 @@ public class GameData : MonoBehaviour
     {
         public int userlocation { get; set; }
         public int dice { get; set; }
+    }
+
+    public class MyLibWrapper
+    {
+        [DllImport("libc.dll", SetLastError = true)]
+        static extern IntPtr LoadLibrary(string lpFileName);
+
+        [DllImport("MyLibrary", EntryPoint = "MyFunction", CallingConvention = CallingConvention.Cdecl)]
+        static extern void MyFunction();
+
+        public static void LoadLibrary()
+        {
+            // ¸ü¤J¨ç¦¡®w
+            LoadLibrary("MyLibrary.dll");
+
+            // ©I¥s¨ç¦¡
+            MyFunction();
+        }
     }
 }
