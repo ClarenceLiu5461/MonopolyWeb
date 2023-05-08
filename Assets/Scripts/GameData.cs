@@ -4,10 +4,13 @@ using UnityEngine;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 
 public class GameData : MonoBehaviour
 {
+    [DllImport("libc.dll")] private static extern void Frobnicate();
+
     public static int Past;
     public static int DiceNum;
 
