@@ -67,13 +67,13 @@ public class DiceController : MonoBehaviour
         GameData.DiceNum = DiceNum;
         GameData.Past = Past;
         //Send POST request
-        StartCoroutine(SendPosition());
+        string PlayerLocation = Past.ToString();
+        StartCoroutine(SendPosition(PlayerLocation));
     }
 
-    IEnumerator SendPosition()
+    IEnumerator SendPosition(string PlayerLocation)
     {
         // 設定要傳送的字串資料
-        string PlayerLocation = Past.ToString();
         List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
         formData.Add(new MultipartFormDataSection("Location", PlayerLocation));
         // 建立UnityWebRequest物件
