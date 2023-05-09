@@ -63,6 +63,12 @@ public class DiceController : MonoBehaviour
         //Repeating the progress
         InvokeRepeating("Step", 0.5f, 0.5f);
         Dice.GetComponent<Button>().interactable = false;
+        StartCoroutine(DelayedExecution(4.0f));
+    }
+
+    IEnumerator DelayedExecution(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         //Synchronize variables
         GameData.DiceNum = DiceNum;
         GameData.Past = Past;
@@ -70,7 +76,10 @@ public class DiceController : MonoBehaviour
         string PlayerLocation = GameData.Past.ToString();
         Debug.Log(PlayerLocation);
         StartCoroutine(SendPosition(PlayerLocation));
+        Dice.GetComponent<Button>().interactable = true;
+        AudioSource.PlayOneShot(Choosed);
     }
+
 
     IEnumerator SendPosition(string PlayerLocation)
     {
@@ -92,7 +101,6 @@ public class DiceController : MonoBehaviour
         }
     }
 
-
     public void Step()
     {
         AudioSource.PlayOneShot(StepSound); //Play move audio one time
@@ -109,8 +117,6 @@ public class DiceController : MonoBehaviour
         {
             CancelInvoke("Step");
             StepCount = 0;
-            Dice.GetComponent<Button>().interactable = true;
-            AudioSource.PlayOneShot(Choosed);
         }
     }
 
