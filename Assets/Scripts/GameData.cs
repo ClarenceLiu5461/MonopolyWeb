@@ -11,7 +11,7 @@ public class GameData : MonoBehaviour
     public static int DiceNum;
     void Awake()
     {
-        SendRequest();
+        StartCoroutine(SendRequest());
     }
     IEnumerator SendRequest()
     {
