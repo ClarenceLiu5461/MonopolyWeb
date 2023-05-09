@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class DiceController : MonoBehaviour
@@ -26,13 +27,15 @@ public class DiceController : MonoBehaviour
     private int Past;
     void Start()
     {
+        //Background music
         AudioSource = GetComponent<AudioSource>();
+        //Get data from GameData
         Past = GameData.Past;
         DiceNum = GameData.DiceNum;
         Player.transform.position = MapGenerator.ObjectList[Past].transform.position;
     }
 
-    public void RollDice()
+    public void RollDice() //Roll dice Button
     {
         DiceNum--;
         Point = Random.Range(1, 7);
@@ -57,9 +60,37 @@ public class DiceController : MonoBehaviour
                 Dice.GetComponent<Image>().sprite = DiceSix;
                 break;
         }
+        //Repeating the progress
         InvokeRepeating("Step", 0.5f, 0.5f);
         Dice.GetComponent<Button>().interactable = false;
+        //Synchronize variables
+        GameData.DiceNum = DiceNum;
+        GameData.Past = Past;
+        //Send POST request
+        StartCoroutine(SendPosition());
     }
+
+    IEnumerator SendPosition()
+    {
+        // 設定要傳送的字串資料
+        string PlayerLocation = Past.ToString();
+        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
+        formData.Add(new MultipartFormDataSection("Location", PlayerLocation));
+        // 建立UnityWebRequest物件
+        UnityWebRequest www = UnityWebRequest.Post("http://localhost:8002/form/php/resum.php", formData);
+        // 傳送網路請求
+        yield return www.SendWebRequest();
+        // 檢查網路請求是否成功
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            Debug.Log("Error sending string: " + www.error);
+        }
+        else
+        {
+            Debug.Log("String sent successfully");
+        }
+    }
+
 
     public void Step()
     {
@@ -91,12 +122,5 @@ public class DiceController : MonoBehaviour
         {
             Dice.GetComponent<Button>().interactable = false;
         }
-    }
-    //Called this function when progress shutted down
-    private void OnDestroy()
-    {
-        //Synchronize GameData
-        GameData.DiceNum = DiceNum;
-        GameData.Past = Past;
     }
 }
