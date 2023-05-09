@@ -67,7 +67,8 @@ public class DiceController : MonoBehaviour
         GameData.DiceNum = DiceNum;
         GameData.Past = Past;
         //Send POST request
-        string PlayerLocation = Past.ToString();
+        string PlayerLocation = GameData.Past.ToString();
+        Debug.Log(PlayerLocation);
         StartCoroutine(SendPosition(PlayerLocation));
     }
 
