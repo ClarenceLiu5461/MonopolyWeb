@@ -27,15 +27,9 @@ public class DiceController : MonoBehaviour
     void Start()
     {
         AudioSource = GetComponent<AudioSource>();
-        StartCoroutine(GetData());
-    }
-
-    IEnumerator GetData()
-    {
         Past = GameData.Past;
         DiceNum = GameData.DiceNum;
         Player.transform.position = MapGenerator.ObjectList[Past].transform.position;
-        yield return null;
     }
 
     public void RollDice()

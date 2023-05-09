@@ -9,8 +9,11 @@ public class GameData : MonoBehaviour
 {
     public static int Past;
     public static int DiceNum;
-
-    IEnumerator Start()
+    void Awake()
+    {
+        SendRequest();
+    }
+    IEnumerator SendRequest()
     {
         using (UnityWebRequest webRequest = UnityWebRequest.Get("http://localhost:8002/form/php/gameuser.php"))
         {
